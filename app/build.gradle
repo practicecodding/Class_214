@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.hamidul.homework2142'
+    namespace 'com.hamidul.home_work_2142'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.hamidul.homework2142"
+        applicationId "com.hamidul.home_work_2142"
         minSdk 21
         targetSdk 33
         versionCode 1

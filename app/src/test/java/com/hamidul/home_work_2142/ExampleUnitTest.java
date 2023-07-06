@@ -1,4 +1,4 @@
-package com.hamidul.homework2142;
+package com.hamidul.home_work_2142;
 
 import org.junit.Test;
 
