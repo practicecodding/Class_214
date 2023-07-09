@@ -36,18 +36,19 @@ public class MainActivity extends AppCompatActivity {
         //=============================================================
 
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String Number = editText.getText().toString();
-                if (Number.equals("")){
+                String sNumber = editText.getText().toString();
+                if (sNumber.equals("")){
                     editText.setError("Please Enter Your Number");
                     editText.requestFocus();
                     return;
                 }
 
-                int myNumber = Integer.parseInt(Number);
+                int myNumber = Integer.parseInt(sNumber);
                 tvDisplay.setVisibility(View.VISIBLE);
                 bcb = 1;
 
