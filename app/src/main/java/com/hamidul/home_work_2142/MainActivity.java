@@ -2,6 +2,7 @@ package com.hamidul.home_work_2142;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -46,22 +47,24 @@ public class MainActivity extends AppCompatActivity {
 
                 if (sc.length()==4){
 
+                    tvDisplay.setVisibility(View.VISIBLE);
+
                     int year = Integer.parseInt(sc);
 
                     if (year%400==0){
 
-                        tvDisplay.setVisibility(View.VISIBLE);
                         tvDisplay.setText(sc+" is leap year");
+                        tvDisplay.setTextColor(Color.GREEN);
 
                     }else if (year%4==0 && year%100!=0){
 
-                        tvDisplay.setVisibility(View.VISIBLE);
                         tvDisplay.setText(sc+" is leap year");
+                        tvDisplay.setTextColor(Color.GREEN);
 
                     }else {
 
-                        tvDisplay.setVisibility(View.VISIBLE);
                         tvDisplay.setText(sc+" is't leap year");
+                        tvDisplay.setTextColor(Color.RED);
 
                     }
                 }
