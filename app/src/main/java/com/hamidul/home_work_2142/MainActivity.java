@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     TextView tvDisplay;
+    int Back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (sc.length()==4){
 
+                    Back = 1;
+
                     tvDisplay.setVisibility(View.VISIBLE);
 
                     int year = Integer.parseInt(sc);
@@ -54,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
                     if (year%400==0){
 
                         tvDisplay.setText(sc+" is leap year");
-                        tvDisplay.setTextColor(Color.GREEN);
+                        tvDisplay.setTextColor(Color.parseColor("#1F7E24"));
 
                     }else if (year%4==0 && year%100!=0){
 
                         tvDisplay.setText(sc+" is leap year");
-                        tvDisplay.setTextColor(Color.GREEN);
+                        tvDisplay.setTextColor(Color.parseColor("#1F7E24"));
 
                     }else {
 
@@ -81,7 +84,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    @Override
+    public void onBackPressed() {
+
+        if (Back==1){
+            editText.setText("");
+            tvDisplay.setText("");
+            tvDisplay.setVisibility(View.GONE);
+            Back=0;
+        }else {
+            super.onBackPressed();
+        }
 
     }
 }
