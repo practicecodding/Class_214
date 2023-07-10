@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     TextView tvDisplay;
     Button button;
     EditText editText;
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         tvDisplay = findViewById(R.id.tvDisplay);
         //=============================================================
-
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -63,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 String sNumber = editText.getText().toString();
+
                 if (sNumber.equals("")){
                     editText.setError("Please Enter Your Number");
                     editText.requestFocus();
@@ -81,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 if ( myNumber%5==0 && myNumber%11==0 ){
                     tvDisplay.setText(myNumber+" is divisible by 5 and 11");
                     tvDisplay.setTextColor(Color.GREEN);
+                    //tvDisplay.setTextColor(Color.parseColor("#ffffff"));
                 }else {
                     tvDisplay.setText(myNumber+" isn't divisible by 5 and 11");
                     tvDisplay.setTextColor(Color.RED);
