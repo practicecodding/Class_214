@@ -44,6 +44,33 @@
         android:layout_marginTop="20dp"
         >
 
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Enter Your Week Number"
+            android:inputType="number"
+            android:maxLength="1"
+            android:importantForAutofill="no"
+            android:padding="15dp"
+            android:background="@drawable/custom_design"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text=""
+            android:textSize="50sp"
+            android:textStyle="italic|bold"
+            android:background="@drawable/custom_design"
+            />
 
     </LinearLayout>
 
