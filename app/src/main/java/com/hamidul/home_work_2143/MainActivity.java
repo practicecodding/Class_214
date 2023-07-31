@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
                     tvDisplay.setVisibility(View.GONE);
                 }
 
-
             }
 
             @Override
@@ -110,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
 
     }
 
