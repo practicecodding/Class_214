@@ -1,18 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--  Toolbar Start  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/custom_toolbar"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="24dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Home_Work_214.4"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold|italic"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </LinearLayout>
+    <!--  Toolbar End  -->
+
+    <!--  After Toolbar  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        >
+        <EditText
+            android:id="@+id/edPhy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_design"
+            android:layout_margin="20dp"
+            android:padding="15dp"
+            android:hint="Enter Your Physics Number"
+            android:inputType="number"
+            android:maxLength="3"
+            />
+
+        <EditText
+            android:id="@+id/edChem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_design"
+            android:layout_margin="20dp"
+            android:padding="15dp"
+            android:hint="Enter Your Chemistry Number"
+            android:inputType="number"
+            android:maxLength="3"
+            />
+
+        <EditText
+            android:id="@+id/edBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_design"
+            android:layout_margin="20dp"
+            android:padding="15dp"
+            android:hint="Enter Your Biology Number"
+            android:inputType="number"
+            android:maxLength="3"
+            />
+
+        <EditText
+            android:id="@+id/edMath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_design"
+            android:layout_margin="20dp"
+            android:padding="15dp"
+            android:hint="Enter Your Mathematics Number"
+            android:inputType="number"
+            android:maxLength="3"
+            />
+
+        <EditText
+            android:id="@+id/edCom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_design"
+            android:layout_margin="20dp"
+            android:padding="15dp"
+            android:hint="Enter Your Computer Number"
+            android:inputType="number"
+            android:maxLength="3"
+            />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_design"
+            android:layout_margin="20dp"
+            android:padding="15dp"
+            android:text="Show Result"
+            android:textSize="20sp"
+            android:textAllCaps="true"
+            />
+
+    </LinearLayout>
+    <!--  After Toolbar  -->
+
+
+</LinearLayout>
