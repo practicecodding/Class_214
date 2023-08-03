@@ -63,6 +63,8 @@
             android:padding="15dp"
             android:text="Show Result"
             android:textAllCaps="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             />
 
         <TextView

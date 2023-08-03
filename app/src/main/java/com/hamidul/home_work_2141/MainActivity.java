@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
         if (bcb==1){
             tvDisplay.setVisibility(View.GONE);
             editText.setText("");
-            tvDisplay.setText("");
             bcb = 0;
         }else {
             super.onBackPressed();
