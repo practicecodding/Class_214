@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,11 +40,161 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         //=================================================================
 
+        //******************************************************************************************
+        edPhy.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String s1 = edPhy.getText().toString();
+
+                if (s1.length()==3){
+
+                    int check = Integer.parseInt(s1);
+
+                    if (check>100){
+                        edPhy.setError("Maximum Number 100");
+                        edPhy.requestFocus();
+                        return;
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        edChem.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String s1 = edChem.getText().toString();
+
+                if (s1.length()==3){
+
+                    int check = Integer.parseInt(s1);
+
+                    if (check>100){
+                        edChem.setError("Maximum Number 100");
+                        edChem.requestFocus();
+                        return;
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        edBio.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String s1 = edBio.getText().toString();
+
+                if (s1.length()==3){
+
+                    int check = Integer.parseInt(s1);
+
+                    if (check>100){
+                        edBio.setError("Maximum Number 100");
+                        edBio.requestFocus();
+                        return;
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        edMath.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String s1 = edMath.getText().toString();
+
+                if (s1.length()==3){
+
+                    int check = Integer.parseInt(s1);
+
+                    if (check>100){
+                        edMath.setError("Maximum Number 100");
+                        edMath.requestFocus();
+                        return;
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        edCom.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String s1 = edCom.getText().toString();
+
+                if (s1.length()==3){
+
+                    int check = Integer.parseInt(s1);
+
+                    if (check>100){
+                        edCom.setError("Maximum Number 100");
+                        edCom.requestFocus();
+                        return;
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        //******************************************************************************************
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String sPhy, sChem, sBio, sMath, sCom;
+
+                int Phy, Chem, Bio, Math, Com, Grade;
+
                 //++++++++++++++++++++++++++++++++++++
                 sPhy = edPhy.getText().toString();
                 sChem = edChem.getText().toString();
@@ -48,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 sMath = edMath.getText().toString();
                 sCom = edCom.getText().toString();
                 //====================================
+
 
                 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                 if (sPhy.equals("")) {
@@ -73,12 +228,25 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //=======================================================
 
+                //++++++++++++++++++++++++++++++
+                Phy = Integer.parseInt(sPhy);
+                Chem = Integer.parseInt(sChem);
+                Bio = Integer.parseInt(sBio);
+                Math = Integer.parseInt(sMath);
+                Com = Integer.parseInt(sCom);
+                //==============================
+
+                //+++++++++++++++++++++++++++++++++++++++++++++
+                Result.Total = Phy+Chem+Bio+Math+Com;
+                //=============================================
+
                 Result.color=getResources().getColor(R.color.green);
+
                 Intent intent = new Intent(MainActivity.this,Result.class);
                 startActivity(intent);
+
             }
         });
-
 
     }
 }

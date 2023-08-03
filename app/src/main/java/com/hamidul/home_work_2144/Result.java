@@ -2,15 +2,18 @@ package com.hamidul.home_work_2144;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-public class Result extends AppCompatActivity {
+import java.text.DecimalFormat;
 
-    TextView resutlToolbar, resut1, resut2;
-    public static int color;
+public class Result extends AppCompatActivity {
+    TextView resutlToolbar, tPercentage, Grade;
+    public static int Total, color;
+    float Percentage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,13 +26,33 @@ public class Result extends AppCompatActivity {
 
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++
         resutlToolbar = findViewById(R.id.resutlToolbar);
-        resut1 = findViewById(R.id.resut1);
-        resut2 = findViewById(R.id.resut2);
+        tPercentage = findViewById(R.id.Percentage);
+        Grade = findViewById(R.id.Grade);
         //=====================================================
 
-        resut1.setTextColor(color);
+        //DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        Percentage = (float) Total/5;
+        //tvPercentage = Float.valueOf(decimalFormat.format(tvPercentage));
 
+        tPercentage.setText("Percentage = "+Percentage+"%");
+        
+        if (Percentage>=80){
+            Grade.setText("Grade : A");
+        } else if (Percentage>=70) {
+            Grade.setText("Grade : B");
+        } else if (Percentage>=60) {
+            Grade.setText("Grade : C");
+        } else if (Percentage>=50) {
+            Grade.setText("Grade : D");
+        } else if (Percentage>=40) {
+            Grade.setText("Grade : E");
+        } else if (Percentage<40) {
+            resutlToolbar.setText("FAILED");
+            resutlToolbar.setTextColor(Color.RED);
+            Grade.setText("Grade : F");
+        }
 
+        //tPercentage.setTextColor(color);
 
     }
 }
