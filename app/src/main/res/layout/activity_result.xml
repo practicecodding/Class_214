@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Result">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--  Toolbar Start  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/result_toolbar"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="24dp"
+            >
+           <TextView
+               android:id="@+id/resutlToolbar"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Result"
+               android:gravity="center"
+               android:textSize="25sp"
+               android:textStyle="bold"
+               android:textColor="@color/black"
+               />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+    <!--  Toolbar Start  -->
+
+    <!--  After Toolbar  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/result_design"
+        >
+
+        <TextView
+            android:id="@+id/resut1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Result Percentage"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/resut2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Result Grade"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            />
+
+
+    </LinearLayout>
+    <!--  After Toolbar  -->
+
+
+
+
+
+
+
+</LinearLayout>
