@@ -116,6 +116,8 @@
             android:text="Show Result"
             android:textSize="20sp"
             android:textAllCaps="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             />
 
     </LinearLayout>
