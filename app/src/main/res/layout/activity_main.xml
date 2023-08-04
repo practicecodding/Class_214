@@ -110,15 +110,16 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_design"
             android:layout_margin="20dp"
-            android:padding="15dp"
-            android:text="Show Result"
-            android:textSize="20sp"
-            android:textAllCaps="true"
+            android:background="@drawable/custom_design"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            />
+            android:padding="15dp"
+            android:text="Show Result"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:enabled="true"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
     <!--  After Toolbar  -->

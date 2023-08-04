@@ -58,8 +58,10 @@ public class MainActivity extends AppCompatActivity {
                     if (check>100){
                         edPhy.setError("Maximum Number 100");
                         edPhy.requestFocus();
-                        return;
+                        button.setEnabled(false);
                     }
+                } else {
+                    button.setEnabled(true);
                 }
 
             }
@@ -87,8 +89,10 @@ public class MainActivity extends AppCompatActivity {
                     if (check>100){
                         edChem.setError("Maximum Number 100");
                         edChem.requestFocus();
-                        return;
+                        button.setEnabled(false);
                     }
+                } else {
+                    button.setEnabled(true);
                 }
 
             }
@@ -116,8 +120,10 @@ public class MainActivity extends AppCompatActivity {
                     if (check>100){
                         edBio.setError("Maximum Number 100");
                         edBio.requestFocus();
-                        return;
+                        button.setEnabled(false);
                     }
+                } else {
+                    button.setEnabled(true);
                 }
 
             }
@@ -145,8 +151,10 @@ public class MainActivity extends AppCompatActivity {
                     if (check>100){
                         edMath.setError("Maximum Number 100");
                         edMath.requestFocus();
-                        return;
+                        button.setEnabled(false);
                     }
+                } else {
+                    button.setEnabled(true);
                 }
 
             }
@@ -174,8 +182,10 @@ public class MainActivity extends AppCompatActivity {
                     if (check>100){
                         edCom.setError("Maximum Number 100");
                         edCom.requestFocus();
-                        return;
+                        button.setEnabled(false);
                     }
+                } else {
+                    button.setEnabled(true);
                 }
 
             }
