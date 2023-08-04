@@ -47,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
                 String sc = editText.getText().toString();
 
+                //if (sc.length()==0){
+                //    button.setEnabled(false);
+                //} else {
+                //    button.setEnabled(true);
+                //}
+
+                button.setEnabled(!sc.isEmpty());
+
                 if (count<before){
                     tvDisplay.setVisibility(View.GONE);
                 }else {
@@ -67,11 +75,12 @@ public class MainActivity extends AppCompatActivity {
 
                 String sNumber = editText.getText().toString();
 
-                if (sNumber.equals("")){
-                    editText.setError("Please Enter Your Number");
-                    editText.requestFocus();
-                    return;
-                }
+                //if (sNumber.equals("")){
+                    //editText.setError("Please Enter Your Number");
+                    //editText.requestFocus();
+                    //return;
+                //}
+
                 int myNumber = Integer.parseInt(sNumber);
                 tvDisplay.setVisibility(View.VISIBLE);
                 bcb = 1;

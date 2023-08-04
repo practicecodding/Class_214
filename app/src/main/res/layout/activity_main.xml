@@ -65,6 +65,7 @@
             android:textAllCaps="true"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
+            android:enabled="false"
             />
 
         <TextView
