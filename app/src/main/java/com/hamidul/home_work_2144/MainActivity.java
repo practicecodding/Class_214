@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText edPhy, edChem, edBio, edMath, edCom;
     Button button, button2;
-    int delete = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
