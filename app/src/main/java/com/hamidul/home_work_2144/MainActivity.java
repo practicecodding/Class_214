@@ -340,6 +340,7 @@ public class MainActivity extends AppCompatActivity {
                 edBio.setText("");
                 edMath.setText("");
                 edCom.setText("");
+                edPhy.requestFocus();
             }
         });
 
