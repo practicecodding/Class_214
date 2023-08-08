@@ -62,6 +62,9 @@
             android:textAllCaps="true"
             android:layout_margin="20dp"
             android:background="@drawable/custom_design"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:enabled="false"
             />
 
         <TextView
