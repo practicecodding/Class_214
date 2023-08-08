@@ -1,18 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Toolbar Start -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:background="@drawable/custom_toolbar"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="24dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Home_Work_214.5"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold|italic"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+    <!--  Toolbar End  -->
+
+    <!--  After Toolbar  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        >
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/custom_design"
+            android:inputType="number"
+            android:maxLength="9"
+            android:padding="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Result"
+            android:textAllCaps="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/custom_design"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="Rsult Here"
+            android:textSize="25sp"
+            android:padding="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_margin="20dp"
+            android:textStyle="italic"
+            android:background="@drawable/view"
+            />
+
+    </LinearLayout>
+
+    
+
+
+
+
+</LinearLayout>
