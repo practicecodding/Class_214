@@ -91,12 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (Back==1){
             editText.setText("");
-            tvDisplay.setText("");
-            tvDisplay.setVisibility(View.GONE);
             Back=0;
         }else {
             super.onBackPressed();
         }
 
     }
+
 }

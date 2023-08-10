@@ -26,7 +26,8 @@
                 android:text="Home_Work_214.2"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"
+                />
 
         </androidx.appcompat.widget.Toolbar>
 
