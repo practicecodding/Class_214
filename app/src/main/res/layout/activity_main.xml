@@ -42,19 +42,29 @@
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         >
-        <EditText
-            android:id="@+id/edText"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_edittext"
             android:layout_margin="20dp"
             android:hint="Enter Your Number"
-            android:padding="15dp"
-            android:inputType="number"
-            android:maxLength="9"
-            />
+            app:boxStrokeColor="#9C27B0"
+            app:hintTextColor="#9C27B0"
+            app:endIconMode="clear_text"
+            app:endIconTint="#9C27B0"
+            >
 
-        <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="9"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

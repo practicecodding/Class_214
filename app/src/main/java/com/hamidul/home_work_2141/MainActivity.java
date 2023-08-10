@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     TextView tvDisplay;
     Button button;
     EditText editText;
-    int bcb = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        editText = findViewById(R.id.edText);
+        editText = findViewById(R.id.editText);
         button = findViewById(R.id.button);
         tvDisplay = findViewById(R.id.tvDisplay);
         //=============================================================
@@ -73,26 +72,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String sNumber = editText.getText().toString();
+                    String sNumber = editText.getText().toString();
 
-                //if (sNumber.equals("")){
+                    //if (sNumber.equals("")){
                     //editText.setError("Please Enter Your Number");
                     //editText.requestFocus();
                     //return;
-                //}
+                    //}
 
-                int myNumber = Integer.parseInt(sNumber);
-                tvDisplay.setVisibility(View.VISIBLE);
-                bcb = 1;
+                    int myNumber = Integer.parseInt(sNumber);
+                    tvDisplay.setVisibility(View.VISIBLE);
 
-                if ( myNumber%5==0 && myNumber%11==0 ){
-                    tvDisplay.setText(myNumber+" is divisible by 5 and 11");
-                    tvDisplay.setTextColor(Color.GREEN);
-                    //tvDisplay.setTextColor(Color.parseColor("#ffffff"));
-                }else {
-                    tvDisplay.setText(myNumber+" isn't divisible by 5 and 11");
-                    tvDisplay.setTextColor(Color.RED);
-                }
+                    if ( myNumber%5==0 && myNumber%11==0 ){
+                        tvDisplay.setText(myNumber+" is divisible by 5 and 11");
+                        tvDisplay.setTextColor(Color.GREEN);
+                        //tvDisplay.setTextColor(Color.parseColor("#ffffff"));
+                    }else {
+                        tvDisplay.setText(myNumber+" isn't divisible by 5 and 11");
+                        tvDisplay.setTextColor(Color.RED);
+                    }
 
             }
 
@@ -100,16 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        if (bcb==1){
-            tvDisplay.setVisibility(View.GONE);
-            editText.setText("");
-            bcb = 0;
-        }else {
-            super.onBackPressed();
-        }
 
-    }
+
 
 }
