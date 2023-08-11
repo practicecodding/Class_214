@@ -12,10 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     TextView tvDisplay;
+    TextInputLayout textInputLayout;
     int Back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         //+++++++++++++++++++++++++++++++++++++++
         editText = findViewById(R.id.editText);
         tvDisplay = findViewById(R.id.tvDisplay);
+        textInputLayout = findViewById(R.id.textInputLayout);
         //=======================================
 
 
@@ -54,22 +58,29 @@ public class MainActivity extends AppCompatActivity {
 
                     int year = Integer.parseInt(sc);
 
-                    if (year%400==0){
+                    if (year!=0 && year%400==0){
 
                         tvDisplay.setText(sc+" is leap year");
                         tvDisplay.setTextColor(Color.parseColor("#1F7E24"));
 
-                    }else if (year%4==0 && year%100!=0){
+                    } else if (year!=0 && year%4==0 && year%100!=0){
 
                         tvDisplay.setText(sc+" is leap year");
                         tvDisplay.setTextColor(Color.parseColor("#1F7E24"));
 
-                    }else {
+                    } else if (year==0) {
+
+                        textInputLayout.setError("Please Enter A Valid Year");
+                        tvDisplay.setVisibility(View.GONE);
+
+                    } else {
 
                         tvDisplay.setText(sc+" is't leap year");
                         tvDisplay.setTextColor(Color.RED);
 
                     }
+                } else {
+                    textInputLayout.setError(null);
                 }
 
                 if (before>count){

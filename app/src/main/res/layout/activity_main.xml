@@ -41,7 +41,7 @@
         android:layout_marginTop="20dp"
         android:orientation="vertical">
 
-        <EditText
+        <!--        <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,7 +50,32 @@
             android:hint="Enter Your Year"
             android:inputType="number"
             android:maxLength="4"
-            android:padding="15dp" />
+            android:padding="15dp" />  -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Enter Your Year"
+            app:boxStrokeColor="#009688"
+            app:endIconMode="clear_text"
+            app:endIconTint="#009688"
+            app:hintTextColor="#009688"
+            android:textColorHint="#009688"
+            app:errorEnabled="true"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="4"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:visibility="gone"
