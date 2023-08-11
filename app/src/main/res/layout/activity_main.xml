@@ -44,6 +44,7 @@
         android:layout_marginTop="20dp"
         >
 
+        <!--
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
@@ -56,6 +57,33 @@
             android:padding="15dp"
             android:background="@drawable/custom_design"
             />
+            -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlilned"
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Enter Your Week Number"
+            android:textColorHint="#80009688"
+            app:hintTextColor="#80009688"
+            app:boxStrokeColor="#80009688"
+            app:endIconMode="clear_text"
+            app:endIconTint="#80009688"
+            app:errorEnabled="true"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="1"
+                android:inputType="number"
+                android:importantForAutofill="no"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:visibility="gone"

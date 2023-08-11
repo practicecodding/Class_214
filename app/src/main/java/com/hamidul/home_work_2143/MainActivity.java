@@ -11,9 +11,12 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText editText;
+    TextInputLayout textInputLayout;
     TextView tvDisplay;
     int Back;
     @Override
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //+++++++++++++++++++++++++++++++++++++++++++++++++
         editText = findViewById(R.id.editText);
         tvDisplay = findViewById(R.id.tvDisplay);
+        textInputLayout = findViewById(R.id.textInputLayout);
         //=================================================
 
         editText.addTextChangedListener(new TextWatcher() {
@@ -90,12 +94,12 @@ public class MainActivity extends AppCompatActivity {
                     } else {
 
                         tvDisplay.setVisibility(View.GONE);
-                        editText.setError("This Number Isn't Week Number");
+                        textInputLayout.setError("This Number Isn't Week Number");
                         editText.requestFocus();
-                        return;
-
                     }
 
+                } else {
+                    textInputLayout.setError(null);
                 }
 
                 if (before>count){
