@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView tvDisplay;
@@ -54,6 +55,21 @@ public class MainActivity extends AppCompatActivity {
 
                 button.setEnabled(!sc.isEmpty());
 
+                if (sc.length()==0){
+                    button.setTextColor(Color.parseColor("#4D000000"));
+                } else {
+                    button.setTextColor(Color.parseColor("#9C27B0"));
+                }
+
+                if (sc.length()>0){
+                    int i = Integer.parseInt(sc);
+                    if (i==0){
+                        button.setEnabled(false);
+                        button.setTextColor(Color.parseColor("#4D000000"));
+                        Toast.makeText(MainActivity.this, "Minimum Number 1", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
                 if (count<before){
                     tvDisplay.setVisibility(View.GONE);
                 }else {
@@ -83,11 +99,13 @@ public class MainActivity extends AppCompatActivity {
                     int myNumber = Integer.parseInt(sNumber);
                     tvDisplay.setVisibility(View.VISIBLE);
 
-                    if ( myNumber%5==0 && myNumber%11==0 ){
+                    if (myNumber!=0 && myNumber%5==0 && myNumber%11==0 ){
                         tvDisplay.setText(myNumber+" is divisible by 5 and 11");
                         tvDisplay.setTextColor(Color.GREEN);
                         //tvDisplay.setTextColor(Color.parseColor("#ffffff"));
-                    }else {
+                    } else if (myNumber==0) {
+                        tvDisplay.setVisibility(View.GONE);
+                    } else {
                         tvDisplay.setText(myNumber+" isn't divisible by 5 and 11");
                         tvDisplay.setTextColor(Color.RED);
                     }
@@ -97,8 +115,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 
 }
