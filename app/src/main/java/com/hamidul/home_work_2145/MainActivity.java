@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Button button;
     TextView tvDisplay;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     tvDisplay.setVisibility(View.GONE);
                 }
 
+
             }
 
             @Override
@@ -78,8 +78,11 @@ public class MainActivity extends AppCompatActivity {
                 tvDisplay.setText("Total Current Bill \n\n= "+bill+" Taka");
                 tvDisplay.setVisibility(View.VISIBLE);
 
+
             }
         });
 
     }
+
+
 }
