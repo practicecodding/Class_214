@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 if (sc.length()>0){
                     int i = Integer.parseInt(sc);
                     if (i==0){
+                        editText.setText("");
                         button.setEnabled(false);
                         button.setTextColor(Color.parseColor("#4D000000"));
                         Toast.makeText(MainActivity.this, "Minimum Number 1", Toast.LENGTH_SHORT).show();
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     int myNumber = Integer.parseInt(sNumber);
                     tvDisplay.setVisibility(View.VISIBLE);
 
-                    if (myNumber!=0 && myNumber%5==0 && myNumber%11==0 ){
+                    if (myNumber%5==0 && myNumber%11==0 ){
                         tvDisplay.setText(myNumber+" is divisible by 5 and 11");
                         tvDisplay.setTextColor(Color.GREEN);
                         //tvDisplay.setTextColor(Color.parseColor("#ffffff"));
