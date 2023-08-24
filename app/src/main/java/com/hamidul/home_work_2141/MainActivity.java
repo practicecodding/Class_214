@@ -61,15 +61,15 @@ public class MainActivity extends AppCompatActivity {
                     button.setTextColor(Color.parseColor("#9C27B0"));
                 }
 
-                if (sc.length()>0){
-                    int i = Integer.parseInt(sc);
-                    if (i==0){
-                        editText.setText("");
-                        button.setEnabled(false);
-                        button.setTextColor(Color.parseColor("#4D000000"));
-                        Toast.makeText(MainActivity.this, "Minimum Number 1", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                //if (sc.length()>0){
+                  //  int i = Integer.parseInt(sc);
+                    //if (i==0){
+                      //  editText.setText("");
+                       // button.setEnabled(false);
+                        //button.setTextColor(Color.parseColor("#4D000000"));
+                        //Toast.makeText(MainActivity.this, "Minimum Number 1", Toast.LENGTH_SHORT).show();
+                    //}
+                //}
 
                 if (count<before){
                     tvDisplay.setVisibility(View.GONE);
@@ -81,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+
+                if (s.toString().length() >0 && s.toString().startsWith("0")) {
+                    s.clear();
+                }
 
             }
         });
