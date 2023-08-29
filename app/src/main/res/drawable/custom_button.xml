@@ -1,7 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
 
-    <item android:state_enabled="true" android:drawable="@drawable/custom_edittext"/>
-    <item android:state_enabled="false" android:drawable="@drawable/button_disabled"/>
+<!--    <item android:state_enabled="true" android:drawable="@drawable/custom_edittext"/>-->
+<!--    <item android:state_enabled="false" android:drawable="@drawable/button_disabled"/>-->
 
-</selector>
+<!--</selector>-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/white">
+
+    <item>
+        <selector>
+            <item android:state_enabled="true">
+               <shape android:shape="rectangle">
+                   <gradient android:startColor="#80E91E63"
+                       android:endColor="#803F51B5"
+                       android:angle="45"
+                       />
+                   <corners android:radius="5dp"/>
+               </shape>
+            </item>
+
+            <item android:state_enabled="false">
+                <shape android:shape="rectangle">
+                    <solid android:color="#26000000"/>
+                    <corners android:radius="5dp"/>
+                </shape>
+            </item>
+        </selector>
+    </item>
+
+</ripple>

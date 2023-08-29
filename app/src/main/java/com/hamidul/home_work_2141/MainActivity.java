@@ -1,11 +1,15 @@
 package com.hamidul.home_work_2141;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -13,9 +17,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.zip.Inflater;
+
 public class MainActivity extends AppCompatActivity {
     TextView tvDisplay;
-    Button button;
+    Button button,btnYes,btnNo;
     EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,5 +127,37 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void customAlertDialog(){
+        View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog,null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setView(view);
 
+        btnYes = (Button) view.findViewById(R.id.yes);
+        btnNo = (Button) view.findViewById(R.id.no);
+
+        final AlertDialog dialog = builder.create();
+
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
+
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+        customAlertDialog();
+    }
 }
