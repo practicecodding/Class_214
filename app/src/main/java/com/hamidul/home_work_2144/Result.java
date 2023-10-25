@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 public class Result extends AppCompatActivity {
-    TextView resutlToolbar, tPercentage, Grade;
+    TextView resultToolbar, tPercentage, Grade;
     public static int Total, color;
     float Percentage;
     @Override
@@ -25,7 +25,7 @@ public class Result extends AppCompatActivity {
         //======================================================================================================================
 
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++
-        resutlToolbar = findViewById(R.id.resutlToolbar);
+        resultToolbar = findViewById(R.id.resultToolbar);
         tPercentage = findViewById(R.id.Percentage);
         Grade = findViewById(R.id.Grade);
         //=====================================================
@@ -47,8 +47,8 @@ public class Result extends AppCompatActivity {
         } else if (Percentage>=40) {
             Grade.setText("Grade : E");
         } else if (Percentage<40) {
-            resutlToolbar.setText("FAILED");
-            resutlToolbar.setTextColor(Color.RED);
+            resultToolbar.setText("FAILED");
+            resultToolbar.setTextColor(Color.RED);
             Grade.setText("Grade : F");
         }
 
